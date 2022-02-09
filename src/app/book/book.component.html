@@ -1,0 +1,54 @@
+<div class="container">
+  <form [formGroup]="bookForm">
+    <div class="row">
+      <div class="row col-sm-5">
+        <h3 class="title">Books Entry Form</h3>
+        <div class="form-group">
+          <label for="bookid">Book ID</label>
+          <input type="number" id="bookid" name="bookid" class="form-control" autocomplete="off" formControlName="bookid">
+          <span class="help-block" *ngIf="bookForm.get('bookid').hasError('reqired')"></span>
+        </div>
+        <div class="form-group">
+          <label for="bookname">Book Name</label>
+          <input type="text" id="bookname" name="bookname" class="form-control" autocomplete="off"
+            formControlName="bookname">
+            <span class="help-block" *ngIf="bookForm.get('bookname').hasError('reqired')"></span>
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" class="form-control" autocomplete="off" formControlName="author">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row col-sm-8">
+        <div class="form-group">
+          <button type="button" class="btn btn-info" (click)="onPushBook()" [disabled]="!bookForm.valid">
+            Push Book</button>&nbsp;
+          <button type="button" class="btn btn-primary" (click)="onSave()" [disabled]="!bookForm.valid">
+            Save Book</button>&nbsp;
+          <button type="button" class="btn btn-success" (click)="onGet()">
+            Get Book</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row col-sm-6">
+        <div class="form-group">
+          <table class="table">
+            <tr>
+              <th>&nbsp;&nbsp;Book ID</th>
+              <th>&nbsp;&nbsp;Book Name</th>
+              <th>&nbsp;&nbsp;Author</th>
+            </tr>
+            <tr *ngFor="let obj of myBooks">
+              <td>&nbsp;&nbsp;{{ obj.bookid }}</td>
+              <td>&nbsp;&nbsp;{{ obj.bookname }}</td>
+              <td>&nbsp;&nbsp;{{ obj.author }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

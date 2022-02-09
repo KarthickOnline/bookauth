@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="row col-sm-12">
+      <h1 style="text-align: center;">Book Form - Authentication</h1>
+      <ul class="nav nav-tabs">
+        <ng-container *ngIf="_auth.isAuthenticated()">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/book" [skipLocationChange]="true">Book</a>
+          </li>
+        </ng-container>
+        <li class="nav-item" *ngIf="_auth.isAuthenticated()">
+          <a style="cursor: pointer;" (click)="onLogOut()">Logout</a>
+        </li>
+        <ng-container *ngIf="!_auth.isAuthenticated()">
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" routerLink="/login" [skipLocationChange]="false">Login</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/register" [skipLocationChange]="false">Register</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row col-sm-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

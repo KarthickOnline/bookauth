@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+h3 {
+  color: white;
+  font-weight: bold;
+}
+
+.title {
+  text-align: center;
+  vertical-align: bottom;
+  background-color: #04909b;
+  height: 40px;
+  padding-top: 5px;
+}
+
+.columnPan {
+  height: 80vh;
+  border-color: lightslategray;
+  border-style: solid;
+}
+
+.navlstyle {
+  text-decoration: line-through;
+  color: red;
+}
+
+.avlstyle {
+  text-decoration: none;
+  color: green;
+}
+
+.npstyle {
+  text-decoration: line-through;
+  color: blue;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+table,
+th,
+td {
+  border: 1px solid gray;
+}
