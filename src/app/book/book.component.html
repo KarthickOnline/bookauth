@@ -5,14 +5,15 @@
         <h3 class="title">Books Entry Form</h3>
         <div class="form-group">
           <label for="bookid">Book ID</label>
-          <input type="number" id="bookid" name="bookid" class="form-control" autocomplete="off" formControlName="bookid">
+          <input type="number" id="bookid" name="bookid" class="form-control" autocomplete="off"
+            formControlName="bookid">
           <span class="help-block" *ngIf="bookForm.get('bookid').hasError('reqired')"></span>
         </div>
         <div class="form-group">
           <label for="bookname">Book Name</label>
           <input type="text" id="bookname" name="bookname" class="form-control" autocomplete="off"
             formControlName="bookname">
-            <span class="help-block" *ngIf="bookForm.get('bookname').hasError('reqired')"></span>
+          <span class="help-block" *ngIf="bookForm.get('bookname').hasError('reqired')"></span>
         </div>
         <div class="form-group">
           <label for="author">Author</label>
@@ -25,7 +26,7 @@
         <div class="form-group">
           <button type="button" class="btn btn-info" (click)="onPushBook()" [disabled]="!bookForm.valid">
             Push Book</button>&nbsp;
-          <button type="button" class="btn btn-primary" (click)="onSave()" [disabled]="!bookForm.valid">
+          <button type="button" class="btn btn-primary" (click)="onSave()">
             Save Book</button>&nbsp;
           <button type="button" class="btn btn-success" (click)="onGet()">
             Get Book</button>

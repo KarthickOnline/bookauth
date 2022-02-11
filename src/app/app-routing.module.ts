@@ -9,6 +9,11 @@ const routes: Routes = [
   { path: 'book', component: BookComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  // { path: 'blog', component: RegisterComponent },
+  {
+    path: 'blog',
+    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+  },
 ];
 
 @NgModule({
